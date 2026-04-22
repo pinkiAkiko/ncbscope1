@@ -23,6 +23,7 @@ import EmployeeCorner from "../pages/EmployeeCorner";
 import RecruitmentRules from "../pages/RecruitmentRules";
 import CurrentVacancies from "../pages/CurrentVacancies";
 import NotFound from "../pages/NotFound";
+import Grievance from "../pages/Grievance";
 import Login from "../pages/common/Login";
 import Register from "../pages/common/Register";
 import ForgotPassword from "../pages/common/ForgotPassword";
@@ -224,6 +225,7 @@ function AppRoutes() {
             <Route path="/statistics" element={<MainLayout><NotFound /></MainLayout>} />
             <Route path="/deliverables" element={<MainLayout><NotFound /></MainLayout>} />
             <Route path="/compliance" element={<MainLayout><NotFound /></MainLayout>} />
+            <Route path="/grievance" element={<MainLayout><Grievance /></MainLayout>} />
             <Route path="/feedback" element={<MainLayout><NotFound /></MainLayout>} />
             <Route path="/citizen-charter" element={<MainLayout><NotFound /></MainLayout>} />
             <Route path="/faq" element={<MainLayout><NotFound /></MainLayout>} />
