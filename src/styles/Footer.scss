@@ -1,0 +1,560 @@
+@use 'variables' as *;
+
+.footer {
+    background-color: $dark-navy; // Fixed background
+    background-image:
+        linear-gradient(rgba($white, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba($white, 0.02) 1px, transparent 1px);
+    background-size: 40px 40px; // Subtle grid effect
+    color: rgba($white, 0.8);
+    padding-top: 50px;
+    font-family: 'Outfit', 'Inter', sans-serif;
+    position: relative;
+    border-top: 1px solid rgba($white, 0.05);
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba($hq-accent, 0.2), transparent);
+    }
+}
+
+.footer-top {
+    padding-bottom: 40px;
+}
+
+
+
+/* Brand Section - Clean & Centered */
+.footer-brand-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 320px;
+}
+
+.footer-logo-main {
+    width: 85px;
+    height: auto;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 20px rgba($hq-accent, 0.15));
+}
+
+.footer-org-name {
+    color: #ffb400;
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+    letter-spacing: 0.04em;
+}
+
+.footer-motto {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+}
+
+/* Action Groups - Clean & Un-boxed */
+.footer-interactive-group {
+    width: 100%;
+}
+
+.footer-action-btn {
+    background: rgba($white, 0.05);
+    border: 1px solid rgba($white, 0.1);
+    color: $white;
+    padding: 8px 20px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+
+    i {
+        color: #ffb400;
+        font-size: 16px;
+    }
+
+    &:hover {
+        background: rgba($white, 0.1);
+        border-color: #ffb400;
+        transform: translateY(-2px);
+    }
+}
+
+/* Helpline - Refined Box Design */
+.footer-helpline-simple {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(#ffb400, 0.3);
+    border-radius: 8px;
+    padding: 12px 25px;
+    width: 100%;
+    transition: all 0.3s ease;
+    animation: helplineBorderPulse 4s infinite ease-in-out;
+
+    .helpline-label {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 4px;
+        color: rgba($white, 0.9);
+    }
+
+    .helpline-link {
+        font-size: 22px; // Reduced size
+        font-weight: 800;
+        color: #ffb400 !important;
+        text-decoration: none;
+        line-height: 1;
+        letter-spacing: 1px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s;
+
+        i {
+            font-size: 16px; // Sized appropriately
+            opacity: 0.8;
+        }
+
+        &:hover {
+            color: $white !important;
+            transform: scale(1.02);
+        }
+    }
+
+    &:hover {
+        background: rgba(#ffb400, 0.05);
+        border-color: #ffb400;
+        box-shadow: 0 0 15px rgba(#ffb400, 0.1);
+    }
+}
+
+@keyframes helplineBorderPulse {
+
+    0%,
+    100% {
+        border-color: rgba(#ffb400, 0.3);
+        box-shadow: 0 0 0 rgba(#ffb400, 0);
+    }
+
+    50% {
+        border-color: rgba(#ffb400, 0.8);
+        box-shadow: 0 0 10px rgba(#ffb400, 0.2);
+    }
+}
+
+/* Heading Typography */
+.footer-heading-gold {
+    color: #ffb400;
+    text-align: justify;
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+/* Clean Link Lists */
+.footer-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    li a {
+        color: rgba($white, 0.7);
+        text-decoration: none;
+        font-size: 14.5px;
+        font-weight: 500;
+        transition: all 0.2s;
+
+        &:hover {
+            color: $white;
+            transform: translateX(5px);
+        }
+    }
+}
+
+/* New Badge - Minimalist */
+.new-badge {
+    position: relative;
+
+    &::after {
+        content: 'NEW';
+        font-size: 11px;
+        background: rgba(#ffb400, 0.2);
+        color: #ffb400;
+        border: 1px solid rgba(#ffb400, 0.3);
+        padding: 0px 4px;
+        border-radius: 3px;
+        margin-left: 8px;
+        font-weight: 800;
+    }
+}
+
+/* Contact List - Clean & Flat */
+.footer-contact-list-clean {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-item-simple {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+
+    i {
+        color: #ffb400;
+        font-size: 16px;
+        margin-top: 3px;
+    }
+
+    span,
+    a {
+        font-size: 14px;
+        color: rgba($white, 0.7);
+        line-height: 1.5;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: $white;
+    }
+}
+
+/* Social Modern - Floating Circles */
+.footer-social-modern {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon-btn {
+    width: 40px;
+    height: 40px;
+    background: rgba($white, 0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    font-size: 18px;
+    transition: all 0.3s;
+
+    &:hover {
+        background: #ffb400;
+        color: #000;
+        transform: translateY(-5px);
+    }
+}
+
+/* Footer Action Buttons */
+.footer-action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    width: 100%;
+
+    i {
+        font-size: 16px;
+    }
+}
+
+.scam-alert-btn {
+    background: rgba(220, 53, 69, 0.1);
+    color: #ff4d4d !important;
+    border: 1px solid rgba(220, 53, 69, 0.3);
+
+    &:hover {
+        background: rgba(220, 53, 69, 0.2);
+        color: #ff6b6b !important;
+        border-color: rgba(220, 53, 69, 0.5);
+        transform: translateY(-2px);
+    }
+}
+
+.manas-btn {
+    background: rgba(255, 180, 0, 0.1);
+    color: #ffb400;
+    border: 1px solid rgba(255, 180, 0, 0.3);
+
+    &:hover {
+        background: rgba(255, 180, 0, 0.2);
+        color: #ffd043;
+        border-color: rgba(255, 180, 0, 0.5);
+        transform: translateY(-2px);
+    }
+}
+
+.footer-heading-gold {
+    color: #ffb400;
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 25px;
+    letter-spacing: 0.02em;
+}
+
+.footer-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    li a {
+        color: rgba($white, 0.8);
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 500;
+        transition: all 0.2s ease;
+
+        &:hover {
+            color: $white;
+            transform: translateX(5px);
+        }
+    }
+}
+
+/* New Badge */
+.new-badge {
+    position: relative;
+
+    &::after {
+        content: 'NEW';
+        font-size: 12px;
+        background: #ffb400;
+        color: #000;
+        padding: 0px 4px;
+        border-radius: 2px;
+        margin-left: 8px;
+        font-weight: 900;
+    }
+}
+
+/* Contact Column (Legacy Integration) */
+.contact-us-card-legacy {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.contact-info-list-legacy {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 10px;
+    align-items: start;
+
+    i {
+        color: #ffb400;
+        font-size: 14px;
+    }
+
+    p,
+    a {
+        font-size: 14px;
+        color: rgba($white, 0.8);
+        text-decoration: none;
+        margin: 0;
+    }
+
+    a:hover {
+        color: $white;
+    }
+}
+
+/* Social Circles */
+.footer-social-circles {
+    display: flex;
+    gap: 15px;
+}
+
+.social-circle-btn {
+    width: 42px;
+    height: 42px;
+    background: rgba($white, 0.04);
+    border: 1px solid rgba($white, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    font-size: 18px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: #ffb400;
+        color: #000;
+        border-color: #ffb400;
+        transform: translateY(-5px);
+    }
+}
+
+/* Submit Tip Button */
+.submit-tip-btn {
+    display: block;
+    width: 100%;
+    background: transparent;
+    border: 1px solid #ffb400;
+    color: #ffb400;
+    text-align: center;
+    padding: 8px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    transition: all 0.3s;
+
+    &:hover {
+        background: #ffb400;
+        color: #000;
+    }
+}
+
+/* Helpline Items */
+.helpline-item {
+    grid-column: span 2;
+    background: rgba($hq-accent, 0.1);
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+
+    .label {
+        font-size: 11px;
+        color: rgba($white, 0.9);
+        text-transform: uppercase;
+    }
+
+    .val {
+        font-size: 18px;
+        font-weight: 800;
+        color: #ffb400 !important;
+        text-decoration: none;
+    }
+}
+
+/* Policy Bar */
+.footer-policy-bar {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-top: 1px solid rgba($white, 0.08);
+    padding: 15px 0;
+
+    .policy-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 10px 25px;
+
+        li a {
+            color: $white;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 400;
+            white-space: nowrap;
+            transition: all 0.2s;
+
+            &:hover {
+                color: #ffb400;
+            }
+        }
+    }
+}
+
+/* Bottom Bar */
+.footer-bottom-bar {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
+    border-top: 1px solid rgba($white, 0.05);
+}
+
+.footer-bottom-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.bottom-left-info {
+    p {
+        margin: 0;
+        font-size: 13px;
+        color: rgba($white, 0.6);
+        line-height: 1.6;
+
+        strong {
+            color: rgba($white, 0.8);
+            font-weight: 600;
+        }
+    }
+}
+
+.bottom-right-stats {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: rgba($white, 0.65);
+    font-size: 13px;
+
+    .stat-item {
+        strong {
+            color: $white;
+            font-weight: 700;
+            margin-left: 5px;
+        }
+    }
+
+    .stat-sep {
+        opacity: 0.3;
+    }
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+
+
+
+    .footer-bottom-flex {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .bottom-right-stats {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
